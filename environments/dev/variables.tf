@@ -177,3 +177,8 @@ variable "retention_in_days" {
   description = "The retention period in days for the Log Analytics workspace."
   type        = number
 }
+
+variable "log_analytics_sku" {
+  description = "The SKU for the Log Analytics workspace."
+  type        = string
+}
