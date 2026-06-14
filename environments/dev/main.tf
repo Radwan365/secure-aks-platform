@@ -1,3 +1,5 @@
+data "azurerm_client_config" "current" {}
+
 module "vnet" {
   source = "../../modules/vnet"
 
@@ -25,7 +27,7 @@ module "key_vault" {
   location            = var.location
   key_vault_name      = var.key_vault_name
   sku_name            = var.sku_name
-  tenant_id           = var.tenant_id
+  tenant_id           = data.azurerm_client_config.current.tenant_id
   object_id           = module.aks.principal_id
 }
 
