@@ -12,7 +12,7 @@ aks_subnet_address_prefix        = "10.0.2.0/24"
 aks_cluster_name = "aks-secure-aks-dev"
 dns_prefix       = "secureaksdev"
 aks_node_count   = 1
-aks_node_vm_size = "Standard_B2s"
+aks_node_vm_size = "Standard_D2lds_v6"
 
 # === ACR ===
 acr_name = "acrsecureaksdev"
@@ -34,8 +34,8 @@ app_gateway_capacity        = 1
 public_ip_name              = "pip-appgw-secure-aks-dev"
 public_ip_sku               = "Standard"
 public_ip_allocation_method = "Static"
-frontend_port               = 443
-backend_port                = 443
+frontend_port               = 80
+backend_port                = 80
 waf_enabled                 = true
 waf_mode                    = "Prevention"
 waf_rule_set_type           = "OWASP"
