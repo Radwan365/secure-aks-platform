@@ -68,11 +68,6 @@ variable "sku_name" {
   type        = string
 }
 
-variable "tenant_id" {
-  description = "The tenant ID for the Azure Active Directory."
-  type        = string
-}
-
 variable "sql_server_name" {
   description = "The name of the Azure SQL Server."
   type        = string
