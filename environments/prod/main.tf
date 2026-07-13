@@ -38,8 +38,8 @@ module "aks" {
   location            = var.location
   aks_cluster_name    = var.aks_cluster_name
   dns_prefix          = var.dns_prefix
-  node_count          = var.aks.node_count
-  node_vm_size        = var.aks.node_vm_size
+  node_count          = var.aks_node_count
+  node_vm_size        = var.aks_node_vm_size
 }
 
 module "sql" {

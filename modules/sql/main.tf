@@ -11,7 +11,7 @@ resource "azurerm_mssql_server" "sql_server" {
   administrator_login          = var.sql_administrator_login
   administrator_login_password = random_password.sql_admin_password.result
   azuread_administrator {
-    login_username = var.sql_administrator_login
+    login_username = "aks-managed-identity"
     object_id      = var.principal_id
   }
 
