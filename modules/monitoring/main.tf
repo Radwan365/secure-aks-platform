@@ -16,8 +16,8 @@ resource "azurerm_monitor_metric_alert" "cpu_alert" {
   window_size         = "PT5M"
 
   criteria {
-    metric_namespace = "Microsoft.Compute/virtualMachines"
-    metric_name      = "Percentage CPU"
+    metric_namespace = "Microsoft.ContainerService/managedClusters"
+    metric_name      = "node_cpu_usage_percentage"
     aggregation      = "Average"
     operator         = "GreaterThan"
     threshold        = var.cpu_threshold
@@ -34,10 +34,10 @@ resource "azurerm_monitor_metric_alert" "memory_alert" {
   window_size         = "PT5M"
 
   criteria {
-    metric_namespace = "Microsoft.Compute/virtualMachines"
-    metric_name      = "Available Memory Bytes"
+    metric_namespace = "Microsoft.ContainerService/managedClusters"
+    metric_name      = "node_memory_working_set_percentage"
     aggregation      = "Average"
-    operator         = "LessThan"
+    operator         = "GreaterThan"
     threshold        = var.memory_threshold
   }
 }
